@@ -8,47 +8,60 @@ import React, {
     Component,
     StyleSheet,
     Text,
-    View
+    View,
+    ListView
 } from 'react-native';
 
 import {
-    LazyloadScrollView,
+    LazyloadListView,
     LazyloadView
 } from 'react-native-lazyload';
 
 import data from './MOCK_DATA.json';
-class LazyloadScrollExample extends Component {
+class LazyloadListExample extends Component {
+    constructor() {
+        super(...arguments);
+        let ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+        this.state = {
+            dataSource: ds.cloneWithRows(data)
+        };
+    }
+
+    renderRow = (file) => {
+        return <View
+            style={styles.view}
+        >
+            <LazyloadView
+                host="listExample"
+                style={styles.file}
+            >
+                <View style={styles.id}>
+                    <Text style={styles.idText}>{file.id}</Text>
+                </View>
+                <View style={styles.detail}>
+                    <Text style={styles.name}>{file.first_name} {file.last_name}</Text>
+                    <Text><Text style={styles.title}>email: </Text><Text style={styles.email}>{file.email}</Text></Text>
+                    <Text style={styles.ip}><Text style={styles.title}>last visit ip: </Text>{file.ip_address}</Text>
+                </View>
+                <View style={styles.gender}>
+                    <Text style={[styles.genderText, file.gender === 'Male' ? styles.male : styles.female]}>{file.gender}</Text>
+                </View>
+            </LazyloadView>
+        </View>;
+    };
+
     render() {
-        let start = ~~(Math.random() * 900);
-        let list = data.splice(start, 100);
         return (
-            <LazyloadScrollView
+            <LazyloadListView
                 style={styles.container}
                 contentContainerStyle={styles.content}
-                name="scrollExample"
-            >
-                {list.map((file, i) => <View
-                    key={i}
-                    style={styles.view}
-                >
-                    <LazyloadView
-                        host="scrollExample"
-                        style={styles.file}
-                    >
-                        <View style={styles.id}>
-                            <Text style={styles.idText}>{file.id}</Text>
-                        </View>
-                        <View style={styles.detail}>
-                            <Text style={styles.name}>{file.first_name} {file.last_name}</Text>
-                            <Text><Text style={styles.title}>email: </Text><Text style={styles.email}>{file.email}</Text></Text>
-                            <Text style={styles.ip}><Text style={styles.title}>last visit ip: </Text>{file.ip_address}</Text>
-                        </View>
-                        <View style={styles.gender}>
-                            <Text style={[styles.genderText, file.gender === 'Male' ? styles.male : styles.female]}>{file.gender}</Text>
-                        </View>
-                    </LazyloadView>
-                </View>)}
-            </LazyloadScrollView>
+                name="listExample"
+                dataSource={this.state.dataSource}
+                renderRow={this.renderRow}
+                scrollRenderAheadDistance={200}
+                pageSize={1}
+                initialListSize={10}
+            />
         );
     }
 }
@@ -124,4 +137,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default LazyloadScrollExample;
+export default LazyloadListExample;

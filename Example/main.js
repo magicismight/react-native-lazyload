@@ -23,6 +23,7 @@ import {
 import NavBar from './react-native-navbar/NavBar';
 import LazyloadScrollExample from './LazyloadScrollExample';
 import LazyloadImageExample from './LazyloadImageExample';
+import LazyloadListExample from './LazyloadListExample';
 import Launch from './Launch';
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux/native';
@@ -38,7 +39,8 @@ class App extends Component {
                     <Schema name="default" sceneConfig={Animations.FlatFloatFromRight} navBar={NavBar}/>
 
                     <Route name="launch" component={Launch} initial={true} hideNavBar={true} title="RootModal"/>
-                    <Route name="lazyloadScroll" component={LazyloadScrollExample} title="LazyloadScroll"/>
+                    <Route name="lazyloadScroll" component={LazyloadScrollExample} title="LazyloadScrollView"/>
+                    <Route name="lazyloadList" component={LazyloadListExample} title="LazyloadListView"/>
                     <Route name="lazyloadImage" component={LazyloadImageExample} title="LazyloadImage"/>
                 </Router>
 

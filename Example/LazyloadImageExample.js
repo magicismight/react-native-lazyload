@@ -17,7 +17,7 @@ import {
 
 let image = require('./image.jpg');
 
-class reacNativeLazyload extends Component {
+class LazyloadImageExample extends Component {
     render() {
         return (
             <LazyloadScrollView
@@ -64,4 +64,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default reacNativeLazyload;
+export default LazyloadImageExample;

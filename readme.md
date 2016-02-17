@@ -78,4 +78,11 @@ class LazyloadScrollViewExample extends Component{
 
 ```
 
-2. LazyloadListView
+##### LazyloadListView
+
+Same as ListView. But it won\`t  render `LazyloadView` and `LazyloadImage` inside it, util they are scrolled into sight.
+
+#### Run Example
+
+Clone this repository from Github and cd to 'Example' directory then run `npm install`.
+

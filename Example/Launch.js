@@ -28,7 +28,14 @@ class Launch extends Component{
                 underlayColor="#aaa"
                 onPress={Actions.lazyloadScroll}
             >
-                <Text>Lazyload Scroll</Text>
+                <Text>Lazyload ScrollView</Text>
+            </TouchableHighlight>
+            <TouchableHighlight
+                style={styles.button}
+                underlayColor="#aaa"
+                onPress={Actions.lazyloadList}
+            >
+                <Text>Lazyload ListView</Text>
             </TouchableHighlight>
             <TouchableHighlight
                 style={styles.button}

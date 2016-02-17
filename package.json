@@ -1,7 +1,7 @@
 {
     "name": "react-native-lazyload",
     "description": "lazyload for react native",
-    "version": "0.0.2-beta",
+    "version": "0.0.1",
     "license": "MIT",
     "main": "./index.js",
     "keywords": [
