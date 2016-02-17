@@ -3,8 +3,8 @@ import isVisible from './isVisible';
 let instances = {};
 
 class ContentManger {
-    static getManagerById = id => {
-        return instances[id];
+    static show = id => {
+        return instances[id].show();
     };
 
     constructor(host, id, show, hide) {
@@ -21,16 +21,21 @@ class ContentManger {
     _id = null;
 
     hide = () => {
-        this._hide && this._hide();
+        this._hide();
     };
 
     show = () => {
-        this._show && this._show();
+        this._show();
+        this._container.show(this._id);
+        if (!this._container.recycle) {
+            this._container = null;
+            delete instances[this._id];
+        }
     };
 
     layout = (node) => {
         let container = this._container;
-        node.measureLayout(container.handle, (x, y, width, height) => {
+        container && node.measureLayout(container.handle, (x, y, width, height) => {
             let data = {
                 x,
                 y,
@@ -39,12 +44,8 @@ class ContentManger {
                 id: this._id
             };
 
-            let visible = isVisible({x: 0, y: 0}, data, container.dimension, container.offset);
-            if (visible) {
-                this._show();
-            } else {
-                container.add(this._id, data);
-            }
+            isVisible({x: 0, y: 0}, data, container.dimension, container.offset) && this.show();
+            this._container && container.add(this._id, data);
         });
     }
 }

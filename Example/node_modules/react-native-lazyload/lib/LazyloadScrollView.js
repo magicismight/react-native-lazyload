@@ -11,38 +11,34 @@ class LazyloadListView extends Component{
     static displayName = 'LazyloadListView';
 
     static propTypes = {
-        name: PropTypes.string,
+        name: PropTypes.string.isRequired,
         offset: PropTypes.number,
+        recycle: PropTypes.bool,
         ...ScrollView.propTypes
     };
 
     static defaultProps = {
+        recycle: false,
         offset: 0
     };
 
     componentDidMount = () => {
-        this._manager = new ContainerManager(this.props.name, React.findNodeHandle(this));
-    };
-
-    componentWillReceiveProps = nextProps => {
-        if (nextProps.name !== this.props.name) {
-            this._manager = new ContainerManager(this.props.name, React.findNodeHandle(this));
-        }
+        this._manager = new ContainerManager(this.props.name, React.findNodeHandle(this), this.props.recycle);
     };
 
     _manager = null;
 
     _onScroll = e => {
+        this.props.onScroll && this.props.onScroll(e);
         let {x, y} = e.nativeEvent.contentOffset;
         this._manager.calculate({x, y});
-        this.props.onScroll && this.props.onScroll(e);
     };
 
     _onLayout = e => {
+        this.props.onLayout && this.props.onLayout(e);
         let {width, height} = e.nativeEvent.layout;
         this._manager.dimension = {width, height};
         this._manager.offset = this.props.offset;
-        this.props.onLayout && this.props.onLayout(e);
     };
 
     render() {

@@ -1,12 +1,47 @@
 import React, {
-    Component
+    Component,
+    Image,
+    PropTypes
 } from 'react-native';
 
-class LazyloadImage extends Component{
+import LazyloadView from './LazyloadView';
+import Anim from './Anim';
+
+class LazyloadImage extends LazyloadView{
     static displayName = 'LazyloadImage';
 
+    static propTypes = {
+        host: PropTypes.string.isRequired,
+        initialVisibility: PropTypes.bool,
+        animation: PropTypes.oneOfType([
+            PropTypes.shape({
+                duration: PropTypes.number,
+                create: Anim,
+                update: Anim,
+                delete: Anim
+            }),
+            PropTypes.bool
+        ]),
+        ...Image.propTypes
+    };
+
+    constructor() {
+        super(...arguments);
+    }
+
     render() {
-        return null;
+        let key = null;
+        if (this.props.animation) {
+            key = this.state.visible ? 'visible' : 'invisible';
+        }
+
+        return <Image
+            ref={ele => this._root = ele}
+            {...this.props}
+            onLayout={this._onLayout}
+            key={key}
+            source={this.state.visible ? this.props.source : null}
+        />;
     }
 }
 
