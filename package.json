@@ -1,9 +1,13 @@
 {
     "name": "react-native-lazyload",
     "description": "lazyload for react native",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "license": "MIT",
     "main": "./index.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/magicismight/react-native-lazyload"
+    },
     "keywords": [
         "react-component",
         "react-native",
