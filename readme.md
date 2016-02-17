@@ -38,6 +38,8 @@ import {
     LazyloadImage
 } from 'react-native-lazyload';
 
+const list = [...list data here]; // many rows
+
 class LazyloadScrollViewExample extends Component{
     render() {
         return (
