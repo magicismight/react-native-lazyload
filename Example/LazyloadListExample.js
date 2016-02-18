@@ -59,6 +59,7 @@ class LazyloadListExample extends Component {
                 dataSource={this.state.dataSource}
                 renderRow={this.renderRow}
                 scrollRenderAheadDistance={200}
+                renderDistance={100}
                 pageSize={1}
                 initialListSize={10}
             />
