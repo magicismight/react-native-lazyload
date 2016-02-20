@@ -9,6 +9,6 @@
         "react-native": "^0.19.0",
         "react-native-redux-router": "^1.0.6",
         "react-native-root-modal": "^1.0.1",
-        "react-native-lazyload": "^0.1.0"
+        "react-native-lazyload": "^0.1.1"
     }
 }
