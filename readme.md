@@ -27,7 +27,7 @@ LazyloadImage       | Based on Image component. The image content won\`t be rend
 2. Layout the views or images which will be lazyloaded by using `LazyloadView` and `LazyloadImage` instead of `View` or `Image`.
 3. Specify `host` prop for every `LazyloadView` and `LazyloadImage`, the `host` prop should be same as outer `LazyloadScrollView` component`s name prop.
 
-```
+```js
 import React, {
     Component
 } from 'react-native';
