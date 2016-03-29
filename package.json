@@ -15,5 +15,8 @@
         "android",
         "lazyload",
         "load"
-    ]
+    ],
+    "dependencies": {
+        "jquery-callbacks": "0.0.1"
+    }
 }
