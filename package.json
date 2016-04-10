@@ -1,7 +1,7 @@
 {
     "name": "react-native-lazyload",
     "description": "lazyload for react native",
-    "version": "0.2.1",
+    "version": "1.0.0",
     "license": "MIT",
     "main": "./index.js",
     "repository": {
@@ -15,8 +15,5 @@
         "android",
         "lazyload",
         "load"
-    ],
-    "dependencies": {
-        "jquery-callbacks": "0.0.1"
-    }
+    ]
 }
