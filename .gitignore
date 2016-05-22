@@ -1,2 +1,6 @@
-node_modules/
-.idea/
+node_modules
+.idea
+.gradle
+build
+*.iml
+local.properties
