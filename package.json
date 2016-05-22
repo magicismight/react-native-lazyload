@@ -1,12 +1,15 @@
 {
     "name": "react-native-lazyload",
+    "version": "1.0.4",
     "description": "lazyload for react native",
-    "version": "0.2.0",
     "license": "MIT",
     "main": "./index.js",
     "repository": {
         "type": "git",
         "url": "https://github.com/magicismight/react-native-lazyload"
+    },
+    "dependencies": {
+        "react-native-scrollable-mixin": "^1.0.1"
     },
     "keywords": [
         "react-component",
@@ -15,8 +18,5 @@
         "android",
         "lazyload",
         "load"
-    ],
-    "dependencies": {
-        "jquery-callbacks": "0.0.1"
-    }
+    ]
 }

@@ -7,7 +7,8 @@ import React, {
     Component,
     StyleSheet,
     Text,
-    View
+    View,
+    TouchableHighlight
 } from 'react-native';
 
 import {
