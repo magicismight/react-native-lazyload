@@ -8,6 +8,9 @@
         "type": "git",
         "url": "https://github.com/magicismight/react-native-lazyload"
     },
+    "dependencies": {
+        "react-native-scrollable-mixin": "^1.0.1"
+    },
     "keywords": [
         "react-component",
         "react-native",
