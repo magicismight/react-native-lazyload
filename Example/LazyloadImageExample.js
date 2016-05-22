@@ -7,7 +7,8 @@ import React, {
     Component,
     StyleSheet,
     Text,
-    View
+    View,
+    TouchableHighlight
 } from 'react-native';
 
 import {
@@ -25,6 +26,14 @@ class LazyloadImageExample extends Component {
                 contentContainerStyle={styles.content}
                 name="scrollImage"
             >
+                <TouchableHighlight>
+                    <LazyloadImage
+                        host="scrollImage"
+                        style={styles.image}
+                        source={image}
+
+                    />
+                </TouchableHighlight>
                 {Array.apply(null, Array(100)).map((file, i) => <View
                     key={i}
                 >
