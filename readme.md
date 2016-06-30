@@ -84,6 +84,10 @@ class LazyloadScrollViewExample extends Component{
 
 Same as ListView. But it won\`t  render `LazyloadView` and `LazyloadImage` inside it, util they are scrolled into sight.
 
+### Additional Methods
+
+*refresh* - Uses the saved scroll position and causes a 1px move to trigger an update.  Useful after nagivation pop/push where the memory may have been release.
+
 ### Additional Props
 
 Components that extend LazyloadView can accept a prop (function) to be called when the item's visibility changes.
