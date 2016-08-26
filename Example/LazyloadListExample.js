@@ -1,11 +1,9 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- */
-'use strict';
 import React, {
+    Component
+} from 'react';
+
+import {
     AppRegistry,
-    Component,
     StyleSheet,
     Text,
     View,
@@ -51,19 +49,17 @@ class LazyloadListExample extends Component {
     };
 
     render() {
-        return (
-            <LazyloadListView
-                style={styles.container}
-                contentContainerStyle={styles.content}
-                name="listExample"
-                dataSource={this.state.dataSource}
-                renderRow={this.renderRow}
-                scrollRenderAheadDistance={200}
-                renderDistance={100}
-                pageSize={1}
-                initialListSize={10}
-            />
-        );
+        return <LazyloadListView
+            style={styles.container}
+            contentContainerStyle={styles.content}
+            name="listExample"
+            dataSource={this.state.dataSource}
+            renderRow={this.renderRow}
+            scrollRenderAheadDistance={200}
+            renderDistance={100}
+            pageSize={1}
+            initialListSize={10}
+        />;
     }
 }
 

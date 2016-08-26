@@ -86,7 +86,7 @@ Same as ListView. But it won\`t  render `LazyloadView` and `LazyloadImage` insid
 
 ### Additional Methods
 
-*refresh* - Uses the saved scroll position and causes a 1px move to trigger an update.  Useful after nagivation pop/push where the memory may have been release.
+*refresh* - Force to trigger an update.  Useful after nagivation pop/push where the memory may have been release.
 
 ### Additional Props
 
