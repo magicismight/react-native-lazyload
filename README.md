@@ -4,10 +4,12 @@
 
 A \`lazyload\` components suit for React Native.
 
+Forked from [react-native-lazyload](https://github.com/magicismight/react-native-lazyload) as it seems to be no longer maintained.
+
 #### Install
 
 ```
-npm install react-native-lazyload
+npm install react-native-lazyload-deux
 ```
 
 #### Components
