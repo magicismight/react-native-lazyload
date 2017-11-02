@@ -1,14 +1,15 @@
 {
-    "name": "react-native-lazyload",
+    "name": "react-native-lazyload-deux",
     "version": "1.1.0",
-    "description": "lazyload for react native",
+    "description": "Lazyload for React Native",
     "license": "MIT",
     "main": "./index.js",
     "repository": {
         "type": "git",
-        "url": "https://github.com/magicismight/react-native-lazyload"
+        "url": "https://github.com/soldotno/react-native-lazyload-deux"
     },
     "dependencies": {
+        "prop-types": "^15.6.0",
         "react-native-scrollable-mixin": "^1.0.1"
     },
     "keywords": [
