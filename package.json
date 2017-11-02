@@ -1,6 +1,6 @@
 {
     "name": "react-native-lazyload-deux",
-    "version": "1.1.0",
+    "version": "2.0.0",
     "description": "Lazyload for React Native",
     "license": "MIT",
     "main": "./index.js",
@@ -9,8 +9,8 @@
         "url": "https://github.com/soldotno/react-native-lazyload-deux"
     },
     "dependencies": {
-        "prop-types": "^15.6.0",
-        "react-native-scrollable-mixin": "^1.0.1"
+        "prop-types": "15.6.0",
+        "react-native-scrollable-mixin": "1.0.1"
     },
     "keywords": [
         "react-component",
