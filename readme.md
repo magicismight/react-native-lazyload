@@ -7,7 +7,7 @@ A \`lazyload\` components suit for React Native.
 #### Install
 
 ```
-npm install react-native-lazyload
+npm install react-native-lazyload --save
 ```
 
 #### Components
