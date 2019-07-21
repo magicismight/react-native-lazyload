@@ -11,7 +11,7 @@
     "dependencies": {
         "prop-types": "^15.7.2",
         "react-native-scrollable-mixin": "^1.0.1",
-        "deprecated-react-native-listview": "^0.5.5"
+        "deprecated-react-native-listview": "^0.0.5"
     },
     "keywords": [
         "react-component",
