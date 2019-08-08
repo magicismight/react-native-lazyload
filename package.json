@@ -9,6 +9,7 @@
         "url": "https://github.com/magicismight/react-native-lazyload"
     },
     "dependencies": {
+        "deprecated-react-native-listview": "0.0.5",
         "react-native-scrollable-mixin": "^1.0.1"
     },
     "keywords": [
